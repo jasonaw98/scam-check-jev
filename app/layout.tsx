@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
+      <Script
+        defer
+        src="https://umami-jason.vercel.app/script.js"
+        data-website-id="9d5752a2-75cf-41bb-8db6-d2011524290b"
+      />
+      <Script
+        defer
+        src="https://umami-jason.vercel.app/recorder.js"
+        data-website-id="9d5752a2-75cf-41bb-8db6-d2011524290b"
+      />
       <body className="flex min-h-full flex-col bg-black text-white">
         {children}
       </body>
